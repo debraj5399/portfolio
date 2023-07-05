@@ -17,6 +17,7 @@ function NavbarComp() {
         Home: useRef(null),
         About: useRef(null),
         Experience: useRef(null),
+        Skills: useRef(null),
         Project: useRef(null),
         Contact: useRef(null),
     };
@@ -60,6 +61,12 @@ function NavbarComp() {
                         onClick={() => handleLinkClick("Experience")}
                     >
                         Experience
+                    </Navbar.Link>
+                    <Navbar.Link
+                        isActive={activeLink === "Skills"}
+                        onClick={() => handleLinkClick("Skills")}
+                    >
+                        Skills
                     </Navbar.Link>
                     <Navbar.Link
                         isActive={activeLink === "Project"}

@@ -2,70 +2,89 @@
 
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Navbar Styles */
-  .navbar {
-    padding: 10px;
-  }
-  
-  .navbar .brand {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  padding: 10px;
+}
+
+.navbar .brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .link {
+  margin-right: 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .link.active {
+  color: #00a8ff;
+}
+
+.navbar .button {
+  margin-left: auto;
+}
+
+/* Section Styles */
+section {
+  padding: 50px;
+  margin-bottom: 30px;
+}
+
+section h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
   .navbar .link {
-    margin-right: 20px;
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
+    margin-right: 10px;
+    font-size: 16px;
   }
-  
-  .navbar .link.active {
-    color: #00a8ff;
-  }
-  
-  .navbar .button {
-    margin-left: auto;
-  }
-  
-  /* Section Styles */
+
   section {
-    padding: 50px;
-    margin-bottom: 30px;
+    padding: 30px;
   }
-  
+
   section h1 {
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 24px;
+  }
+
+  section p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .link {
+    margin-right: 5px;
+    font-size: 18px; /* Increase the font size for phones */
+  }
+
+  section {
+    padding: 20px;
     margin-bottom: 20px;
   }
-  
+
+  section h1 {
+    font-size: 26px; /* Increase the font size for heading */
+  }
+
   section p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 16px; /* Increase the font size for paragraphs */
   }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .navbar .link {
-      margin-right: 10px;
-      font-size: 16px;
-    }
-  
-    section {
-      padding: 30px;
-    }
-  
-    section h1 {
-      font-size: 24px;
-    }
-  
-    section p {
-      font-size: 14px;
-    }
-  }
-  
+}

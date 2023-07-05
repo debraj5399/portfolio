@@ -4,6 +4,7 @@ import Contact from './Contact'
 import Experience from './Experience'
 import Home from './Home'
 import Project from './Project'
+import Skills from './Skills'
 
 function Section(props) {
     let sectionRefs = props.sectionRefs
@@ -17,6 +18,9 @@ function Section(props) {
             </section>
             <section ref={sectionRefs.Experience}>
                 <Experience />
+            </section>
+            <section ref={sectionRefs.Skills}>
+                <Skills />
             </section>
             <section ref={sectionRefs.Project}>
                 <Project />
