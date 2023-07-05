@@ -36,7 +36,7 @@ const Skills = () => {
   return (
     <Grid.Container gap={2}>
       {Object.entries(skills).map(([category, skillsList]) => (
-        <Grid key={category} xs={2}>
+        <Grid key={category} xs={3}>
             <Spacer></Spacer>
           <Card>
             <Card.Body>
