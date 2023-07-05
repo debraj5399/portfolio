@@ -1,0 +1,71 @@
+/* portfolio.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    padding: 10px;
+  }
+  
+  .navbar .brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar .link {
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .navbar .link.active {
+    color: #00a8ff;
+  }
+  
+  .navbar .button {
+    margin-left: auto;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 50px;
+    margin-bottom: 30px;
+  }
+  
+  section h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .navbar .link {
+      margin-right: 10px;
+      font-size: 16px;
+    }
+  
+    section {
+      padding: 30px;
+    }
+  
+    section h1 {
+      font-size: 24px;
+    }
+  
+    section p {
+      font-size: 14px;
+    }
+  }
+  
