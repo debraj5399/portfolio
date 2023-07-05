@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Navbar, Button, Link, Text, Card, Radio } from "@nextui-org/react";
+import { Navbar, Button, Link, Text} from "@nextui-org/react";
 import { Layout } from "./Layout";
 import "../Components/portfolio.css"
 import Section from "./Section";
