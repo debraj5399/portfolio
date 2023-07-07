@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { Button, Text } from '@nextui-org/react';
-import { BsInstagram, BsLinkedin, BsGithub, BsCodeSlash } from 'react-icons/bs';
+import { BsLinkedin, BsGithub, BsCodeSlash } from 'react-icons/bs';
 import { PiInstagramLogoThin } from 'react-icons/pi';
 
 
