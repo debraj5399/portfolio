@@ -5,8 +5,8 @@ const containerStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '2rem',
   margin: 'auto',
+  marginBottom:"10rem"
 };
 
 const cardStyle = {

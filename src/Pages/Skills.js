@@ -31,26 +31,32 @@ const skills = {
 
 const Skills = () => {
   return (
-    <Grid.Container gap={2}>
-      {Object.entries(skills).map(([category, skillsList]) => (
-        <Grid key={category} xs={12} sm={6} md={4} lg={3}>
-          <Spacer y={1} />
-          <Card style={{width:"15rem"}}>
-            <Card.Body>
-              <Text b style={{ marginBottom: '0.4rem' }}>
-                {category}
-              </Text>
-              {skillsList.map((skill, index) => (
-                <div key={`${category}-${index}`} style={{ display: 'flex', alignItems: 'center' }}>
-                  {React.createElement(skill.icon, { size: 20, style: { marginRight: '5px', marginLeft: '5px' } })}
-                  <Text>{skill.name}</Text>
-                </div>
-              ))}
-            </Card.Body>
-          </Card>
-        </Grid>
-      ))}
-    </Grid.Container>
+    <>
+      <div style={{ textAlign: 'center' }}>
+        <h1>Skills</h1>
+      </div>
+      <Grid.Container gap={2}>
+        {Object.entries(skills).map(([category, skillsList]) => (
+          <Grid key={category} xs={12} sm={6} md={4} lg={3}>
+            <Spacer y={1} />
+            <Card style={{ width: "15rem" }}>
+              <Card.Body>
+                <Text b style={{ marginBottom: '0.4rem' }}>
+                  {category}
+                </Text>
+                {skillsList.map((skill, index) => (
+                  <div key={`${category}-${index}`} style={{ display: 'flex', alignItems: 'center' }}>
+                    {React.createElement(skill.icon, { size: 20, style: { marginRight: '5px', marginLeft: '5px' } })}
+                    <Text>{skill.name}</Text>
+                  </div>
+                ))}
+              </Card.Body>
+            </Card>
+          </Grid>
+        ))}
+      </Grid.Container>
+    </>
+
   );
 };
 
