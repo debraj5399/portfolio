@@ -1,10 +1,8 @@
 import React from 'react';
 import { Card, Grid, Spacer, Text } from '@nextui-org/react';
-import { FaJava, FaDocker, FaPython, FaGithub  } from 'react-icons/fa';
+import { FaJava, FaDocker, FaPython, FaGithub } from 'react-icons/fa';
 import { GrReactjs } from 'react-icons/gr';
-import { SiSpringboot, SiMysql, SiJavascript, SiMongodb, SiHibernate  } from 'react-icons/si';
-
-
+import { SiSpringboot, SiMysql, SiJavascript, SiMongodb, SiHibernate } from 'react-icons/si';
 
 const skills = {
   'Programming Languages': [
@@ -27,23 +25,24 @@ const skills = {
   'Database': [
     { name: 'MySQL', icon: SiMysql },
     { name: 'MongoDB', icon: SiMongodb },
-
     // Add more databases with icons
-  ]
+  ],
 };
 
 const Skills = () => {
   return (
     <Grid.Container gap={2}>
       {Object.entries(skills).map(([category, skillsList]) => (
-        <Grid key={category} xs={3}>
-            <Spacer></Spacer>
-          <Card>
+        <Grid key={category} xs={12} sm={6} md={4} lg={3}>
+          <Spacer y={1} />
+          <Card style={{width:"15rem"}}>
             <Card.Body>
-              <Text b>{category}</Text>
+              <Text b style={{ marginBottom: '0.4rem' }}>
+                {category}
+              </Text>
               {skillsList.map((skill, index) => (
                 <div key={`${category}-${index}`} style={{ display: 'flex', alignItems: 'center' }}>
-                  {React.createElement(skill.icon, { size: 20, style: { marginRight: '5px' } })}
+                  {React.createElement(skill.icon, { size: 20, style: { marginRight: '5px', marginLeft: '5px' } })}
                   <Text>{skill.name}</Text>
                 </div>
               ))}
