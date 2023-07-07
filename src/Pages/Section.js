@@ -1,33 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import About from './About'
 import Contact from './Contact'
 import Experience from './Experience'
-import Home from './Home'
 import Project from './Project'
 import Skills from './Skills'
 
 function Section(props) {
     let sectionRefs = props.sectionRefs
+    const [showSection, setShowSection] = useState(false);
+    const checkTrueFunc = (state) => {
+        setShowSection(state);
+    }
     return (
         <>
-            <section ref={sectionRefs.Home}>
-                <Home />
-            </section>
             <section ref={sectionRefs.About}>
-                <About />
+                <About checkTrue={checkTrueFunc} />
             </section>
-            <section ref={sectionRefs.Experience}>
+            {showSection && (<><section ref={sectionRefs.Experience}>
                 <Experience />
             </section>
-            <section ref={sectionRefs.Skills}>
-                <Skills />
-            </section>
-            <section ref={sectionRefs.Project}>
-                <Project />
-            </section>
-            <section ref={sectionRefs.Contact}>
-                <Contact />
-            </section>
+                <section ref={sectionRefs.Skills}>
+                    <Skills />
+                </section>
+                <section ref={sectionRefs.Project}>
+                    <Project />
+                </section>
+                <section ref={sectionRefs.Contact}>
+                    <Contact />
+                </section></>)}
+
         </>
     )
 }

@@ -23,7 +23,7 @@ const darkTheme = createTheme({
 const AppComponent = ({ children }) => {
   return (
     <NextThemesProvider
-      defaultTheme="system"
+      defaultTheme="dark"
       attribute="class"
       value={{
         light: lightTheme.className,
