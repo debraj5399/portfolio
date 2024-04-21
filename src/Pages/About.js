@@ -1,28 +1,23 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
-import { Button, Text } from '@nextui-org/react';
-import SideNav from './SideNav';
-
+import React, { useState, useEffect } from "react";
+import { Button, Text } from "@nextui-org/react";
+import SideNav from "./SideNav";
 
 export default function About(props) {
-  const [textLines, setTextLines] = useState(['', '', '']);
+  const [textLines, setTextLines] = useState(["", "", ""]);
   const [currentLineIndex, setCurrentLineIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [showAbout, setShowAbout] = useState(false);
-  const textContent = [
-    'Hello,',
-    "I'm Debraj Banik",
-    'Software Engineer'
-  ];
+  const textContent = ["Hello,", "I'm Debraj Banik", "Software Engineer"];
   const handleDownloadCV = () => {
     window.open(
-      'https://drive.google.com/file/d/1iogrv66wqr-BX9PFmICjpjJnAB8TPANQ/view',
-      '_blank'
+      "https://drive.google.com/file/d/1fcF7hBPktjfl9v371Lgoad3cThRcXAfU/view?usp=drive_link",
+      "_blank"
     );
   };
 
   const handleHireMe = () => {
-    window.location.href = 'mailto:writetodebrajbanik@gmail.com';
+    window.location.href = "mailto:writetodebrajbanik@gmail.com";
   };
 
   useEffect(() => {
@@ -38,7 +33,7 @@ export default function About(props) {
           setCurrentLineIndex(currentLineIndex + 1);
           setCurrentCharIndex(0);
         }
-      } catch (e) { }
+      } catch (e) {}
     }, 10);
 
     return () => {
@@ -50,18 +45,15 @@ export default function About(props) {
     try {
       if (currentLineIndex < textContent.length) {
         const newTextLines = [...textLines];
-        newTextLines[currentLineIndex] = textContent[currentLineIndex].substring(
-          0,
-          currentCharIndex
-        );
+        newTextLines[currentLineIndex] = textContent[
+          currentLineIndex
+        ].substring(0, currentCharIndex);
         setTextLines(newTextLines);
       } else {
         setShowAbout(true);
       }
-    } catch (e) { }
+    } catch (e) {}
   }, [currentCharIndex, currentLineIndex, textLines]);
-
-
 
   return (
     <>
@@ -74,10 +66,10 @@ export default function About(props) {
             css={{
               textGradient:
                 index === 0
-                  ? '45deg, $blue600 -20%, $pink600 50%'
+                  ? "45deg, $blue600 -20%, $pink600 50%"
                   : index === 1
-                    ? '45deg, $purple600 -20%, $pink600 100%'
-                    : '45deg, $yellow600 -20%, $red600 100%',
+                  ? "45deg, $purple600 -20%, $pink600 100%"
+                  : "45deg, $yellow600 -20%, $red600 100%",
             }}
             weight="bold"
           >
@@ -86,12 +78,16 @@ export default function About(props) {
         ))}
         {showAbout && (
           <>
-            <div style={{ display: 'flex', marginTop: '2rem' }}>
+            <div style={{ display: "flex", marginTop: "2rem" }}>
               <Button
                 color="gradient"
                 auto
                 ghost
-                style={{ opacity: 0, animation: 'fadeIn 1s forwards', marginRight: '1rem' }}
+                style={{
+                  opacity: 0,
+                  animation: "fadeIn 1s forwards",
+                  marginRight: "1rem",
+                }}
                 onClick={handleDownloadCV}
               >
                 Download CV
@@ -100,33 +96,31 @@ export default function About(props) {
                 color="warning"
                 auto
                 ghost
-                style={{ opacity: 0, animation: 'fadeIn 1s forwards' }}
+                style={{ opacity: 0, animation: "fadeIn 1s forwards" }}
                 onClick={handleHireMe}
               >
                 Hire Me
               </Button>
             </div>
-            <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+            <div style={{ marginTop: "2rem", textAlign: "center" }}>
               <Text h3>About Me</Text>
-              <div style={{ display: 'inline-block', width: '50%' }}>
+              <div style={{ display: "inline-block", width: "50%" }}>
                 <Text>
-                  Experienced software engineer with 2 years of professional expertise.
-                  Skilled in Java, JavaScript, and Python, with a focus on object-oriented design and agile methodologies.
-                  Proficient in front-end and back-end development, database management, and API integration.
-                  Committed to delivering high-quality, scalable software solutions.
-                  Passionate about continuous learning and staying updated with industry trends.
-                  Ready to contribute to your projects and drive efficiency.
-                  Let's connect and discuss your software development needs.
+                  Experienced software engineer with 3 years of professional
+                  expertise. Skilled in Java & JavaScript, with a focus on
+                  object-oriented design and agile methodologies. Proficient in
+                  front-end and back-end development, database management, and
+                  API integration. Committed to delivering high-quality,
+                  scalable software solutions. Passionate about continuous
+                  learning and staying updated with industry trends. Ready to
+                  contribute to your projects and drive efficiency. Let's
+                  connect and discuss your software development needs.
                 </Text>
               </div>
             </div>
-
           </>
         )}
-        
       </div>
-
-
 
       <style jsx>{`
         @keyframes fadeIn {
@@ -138,9 +132,7 @@ export default function About(props) {
           }
         }
       `}</style>
-      {showAbout && (
-          <SideNav />
-        )}
+      {showAbout && <SideNav />}
     </>
   );
 }
